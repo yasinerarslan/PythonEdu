@@ -393,3 +393,61 @@ if x.startswith("Yasin"):
 else:
     print("Hayır")
 
+***********************************************************************************************************************
+
+# Dosyaları Python3 üzerine eklemek için 'open("dosya_adi.uzanti")' fonksiyonu kullanılır. '.py' uzantılı Python
+# programı ile eklenecek dosya aynı klasör içinde olmalıdır. Örneğin;
+
+file=open("Deneme.txt")
+
+# Dosya içideki tutlan verileri yazdırmak için yapılan en genel hata şudur;
+
+file=open("Deneme.txt")
+print(file)
+
+# Bu hatanını önüne şu şekilde geçilir;
+
+file=open("Deneme.txt")
+content=file.read()
+print(content)
+# Kullandığımız 'read()' fonksiyonu dosya içindeki her bölümü bir string'e atar ve yazdırır.
+# Atadığımız 'content' bir string olduğu için stringle kullandığımız her fonksiyonu kullanabiliriz.
+
+# 3 Adet dosya açma metodu vardır. Bunlar;
+# 'r' (read): Dosyayı okuma modunda açar.
+file=open("Deneme.txt","r")
+
+# 'w' (write): Dosyayı yazma modunda açar. Dosya oluşturulmuş ve içinde bir girdi varsa her girdiyi siler. Eğer dosya
+# yoksa yeni bir dosya oluşturur.
+file=open("Deneme.txt","w")
+
+# 'a' (append): Dosyayı ekleme modunda açar. Dosya oluşturulmuş ve içinde bir girdi varsa sonuna ekler. Eğer dosya
+# yoksa yeni bir dosya oluşturur.
+file=open("Deneme.txt","a")
+
+# Dosya ile yazdığımız Python uygulamamız farklı çalışma alanlarında ise Python'un o dosyayı açması için open()
+# fonksiyonuna tam bir adres (konum) vermelisiniz. Şu şekilde kullanabiliriz;
+
+file=open(r"/home/mustachedocto/WorkSpace/Deneme.txt","r")
+#         |
+#        "r:raw string demektir."
+
+# Eğer dosyaya veri yazdırmak istersek 'write()' komutu kullanılır. Örneğimiz ise şu şekilde olur;
+
+file=open("Ünlüler.txt","w")
+file.write("Zeki Müren\n")
+file.write("Seda Sayan\n")
+file.write("Ferdi Tayfur\n")
+file.close()
+#    ~~~~~~~
+#       |
+#    'close()', Dosyayı kapatmak için kullanılan bir fonksiyondur.
+
+# 'readline()' fonksiyonu ile dosya içeriğini satır satır okumak için kullanılır.
+
+file=open("Ünlüler.txt")
+line1=file.readline()
+print(line1.rstirp())
+line2=file.readline()
+print(line2.rstrip())
+file.close()
