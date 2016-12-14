@@ -451,3 +451,31 @@ print(line1.rstirp())
 line2=file.readline()
 print(line2.rstrip())
 file.close()
+
+***********************************************************************************************************************
+
+# .txt swquential (sıralı) doyalardır. Bu tür dosyalarda ilerlemek ve değişiklik için her satırı sırayla okumak gerekir.
+# Değişiklik yapmak için ikinci dosya (geçici dosya) gereklidir. Orjinal dosyadaki bilgiler geçici dosyaya kopyalanır.
+# Ancak değişiklik yapılmak istenen satıra gelindiğinde orjinal satır değil güncellenen satır geçici satır geçici dosyaya
+# kopyalanır. Daha sonra geri kalan kayıtların kopyalanması tamamlanır. Geçici dosya orjinalin yerini alır. Orjinal
+# dosya silinir ve geçici dosyanın daı orjinal dosya adıyla değiştirilir. Bu işlem için "os" kütüphanesi gereklidir.
+
+>> > import os
+
+# Exception (İstisnalar):
+# try, except'in ne olduğunu görmüştük. Şimdide hangi hata durumunda ne yapılacağını kendimiz belirleyelim.
+
+try:
+except ValueError:
+except ZeroDivisionError:
+else:  # Hatalar dışındaki bir hata için kullanılabilir. Eğer except hataları kullanılmaz ise else kullanılır.
+finally:  # Her durumda exceptlerden sonra çalışır.
+
+# Üstteki örnekteki gibi farklı hatalarda belirttiğimiz uyarıyı verecektir.
+# Eğer hata sebebini öğrenmek isersek 'except' şu şekilde kullanılabilir.
+
+try:
+except Exception as err:
+    print(err)
+
+    # 'as err' komutu varolan hata mesajını vermesinde yardımcı olur.
